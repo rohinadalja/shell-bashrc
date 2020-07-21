@@ -4,15 +4,8 @@ set -e
 [ -z "$DEBUG" ] || set -x
 
 cd "$(dirname "$0")/"
+source util/functions.sh
 
-function assertInstalled() {
-  for var in "$@"; do
-    if ! command -v $var &> /dev/null; then
-      echo "ERROR: '$var' is not installed... Please install this to continue."
-      exit 1
-    fi
-  done
-}
 assertInstalled zsh git uname
 
 OS_TYPE=$(uname -s)
@@ -90,3 +83,9 @@ git clone http://github.com/robbyrussell/oh-my-zsh.git $HOME/$OHMY
 
 echo "Changing shell to /bin/zsh ..."
 chsh -s /bin/zsh
+
+if [ -f $(dirname "$0")/antigen.zsh ]; then
+  rm $(dirname "$0")/antigen.zsh
+fi
+
+curl -L git.io/antigen > $(dirname "$0")/antigen.zsh
