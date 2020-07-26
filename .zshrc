@@ -111,3 +111,12 @@ alias ls="ls -AG"
 alias ll="ls -lAGh"
 alias gs="git status"
 alias gap="git add --patch"
+
+
+# TODO: Separate this into Raspberry Pi file
+alias restart_hassio="sudo systemctl restart home-assistant.service"
+alias stop_hassio="sudo systemctl stop home-assistant.service"
+alias status_hassio="sudo systemctl status home-assistant.service"
+
+alias config_hassio="sudo nano /mnt/dietpi_userdata/homeassistant/configuration.yaml"
+alias config_bashrc="sudo nano ~/.bashrc"
