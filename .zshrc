@@ -58,7 +58,7 @@ HYPHEN_INSENSITIVE="true"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="mm/dd/yy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -112,11 +112,14 @@ alias ll="ls -lAGh"
 alias gs="git status"
 alias gap="git add --patch"
 
+alias config_bashrc="echo 'You are opening .bashrc (may not be your default shell)'; sleep 2; sudo nano ~/.bashrc"
+alias config_zsh="sudo nano ~/.zshrc"
 
 # TODO: Separate this into Raspberry Pi file
+alias config_dietpi='sudo /mnt/dietpi-backup/data/boot/dietpi/dietpi-launcher'
 alias restart_hassio="sudo systemctl restart home-assistant.service"
 alias stop_hassio="sudo systemctl stop home-assistant.service"
 alias status_hassio="sudo systemctl status home-assistant.service"
-
 alias config_hassio="sudo nano /mnt/dietpi_userdata/homeassistant/configuration.yaml"
-alias config_bashrc="sudo nano ~/.bashrc"
+alias config_hassio_homekit="sudo nano /mnt/dietpi_userdata/homeassistant/homekit.yaml"
+#alias config_hassio_customize="sudo nano /mnt/dietpi_userdata/homeassistant/customization.yaml"
